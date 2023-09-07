@@ -1,10 +1,4 @@
-{% comment %}
-	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
 
-	You SHOULD NOT modify source code in this page because
-	It is automatically generated from GEMPAGE BUILDER
-	Try to edit page with the live editor.
-{% endcomment %}
 
 (function( jQuery ){
   var $module = jQuery('#m-1678945549236').children('.module');
@@ -12,6 +6,12 @@
 })( window.GemQuery || jQuery );
     
     
+    
+  
+    
+  
+    
+  
     
 (function( jQuery ){
   var $module = jQuery('#m-1678945549181').children('.module');
@@ -189,10 +189,7 @@ $.ajax({
         displayCurrency: true
     });
 })(window.GemQuery || jQuery);
-    (function( jQuery ){
-  // var $module = jQuery('#m-1678945549185').children('.module');
-  // You can add custom Javascript code right here.
-})( window.GemQuery || jQuery );
+    
     
     
     
@@ -493,12 +490,10 @@ $.ajax({
 })( window.GemQuery || jQuery );
   
     
-  
-    (function( jQuery ){
+  (function( jQuery ){
   // var $module = jQuery('#m-1693433256397').children('.module');
   // You can add custom Javascript code right here.
 })( window.GemQuery || jQuery );
-  
     
   
     (function( jQuery ){
