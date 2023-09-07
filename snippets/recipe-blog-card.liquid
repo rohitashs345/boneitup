@@ -1,0 +1,74 @@
+<div class='rp-article-box'>
+
+  {% assign color_cat = article.metafields.custom.color_cat %}
+
+    {% assign gradient1 = 'var(--' | append:color_cat | append:'-gradient1)' %}
+  {% assign gradient2 = 'var(--' | append:color_cat | append:'-gradient2)' %}
+  {% assign primary_color = 'var(--' | append:color_cat | append:'-primary)' %}
+  {% assign secondary_color = 'var(--' | append:color_cat | append:'-secondary)' %}
+  {% assign light_color = 'var(--' | append:color_cat | append:'-light)' %}
+   {% assign filter1 = 'var(--' | append:color_cat | append:'-filter1)' %}
+  
+  <div class='rp-header' style='background:linear-gradient(217deg, rgb({{ gradient1 }}) 0%, rgb({{ gradient2 }}) 100%);'>
+   
+   
+
+    <div class='rp-icon-box'>
+      <span> {% render 'icon-no_lactose' with fill_color:primary_color %} </span>
+      <span> {% render 'icon-no_sugar' with fill_color:primary_color %} </span>
+      <span> {% render 'icon-no_gluten' with fill_color:primary_color %} </span>
+    </div>
+    
+    <h3 class='rp-cat-title'>{{ article.metafields.custom.recipe_category }}</h3>
+    
+  </div>
+  
+  <div class='rp-content-box'>
+    <h3 class='rp-title' style='color:{{ primary_color }};'>{{ article.metafields.custom.recipe_title }}</h3>
+    <p class='rp-description'>{{ article.metafields.custom.recipe_description }}</p>
+    <span class='rp-divider'></span>
+  </div>
+
+
+  <div class='rp-info-box'>
+    <div class='rp-det-cont'>
+      
+      <div class='rp-det-box'>
+        <div class='rp-det-box-top'>
+          <span class='rp-det-icon-wrap'> {% render 'icon-timer'%} </span>
+          <p class='rp-det-val' style='color:{{ primary_color }};'>{{ article.metafields.custom.recipe_time }}</p>
+        </div>
+        <p class='rp-det-title'>Minutes</p>
+      </div>
+
+      <div class='rp-det-box'>
+        <div class='rp-det-box-top'>
+          <span class='rp-det-icon-wrap'> {% render 'icon-book'%} </span>
+          <p class='rp-det-val' style='color:{{ primary_color }};'>{{ article.metafields.custom.recipe_ingredients_count }}</p>
+        </div>
+        <p class='rp-det-title'>Ingred.</p>
+      </div>
+
+      <div class='rp-det-box'>
+        <div class='rp-det-box-top'>
+          <span class='rp-det-icon-wrap'> {% render 'icon-head'%} </span>
+          <p class='rp-det-val' style='color:{{ primary_color }};'>{{ article.metafields.custom.recipe_difficulty }}</p>
+        </div>
+        <p class='rp-det-title'>Diffic.</p>
+      </div>     
+      
+    </div>
+
+    <div class='rp-yield-box' style='background-color:{{ light_color }};'>
+          <div class='rp-yield-img-wrap' style='background-color: white; border-color:{{ primary_color }};'>
+            <img class='rp-yield-img' style='filter: {{ filter1 }};' src='{{ article.metafields.custom.recipe_yield_img | image_url }}'>
+          </div>
+      
+          <p class='rp-yield-text'>{{ article.metafields.custom.recipe_yield }} </p>
+    </div>
+
+  </div>
+  
+  <a class='rp-button' style='background-color:{{ primary_color }}; border-color:{{ primary_color }};' href='{{ article.url }}'>View Recipe</a>
+  
+</div>

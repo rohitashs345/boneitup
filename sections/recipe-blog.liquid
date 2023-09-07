@@ -1,0 +1,503 @@
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+@media screen and (max-width: 768px){
+  .section-template--15748122837187__main-padding{
+padding-bottom:60px;
+  }
+}
+
+  #main-blog-section{
+    max-width:130rem;
+  }
+
+  .tag-box{
+    margin-bottom:40px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:5px;
+    justify-content: center;
+  }
+
+
+  .filter-tag{
+    width:142px;
+    padding: 4px 6px;
+    background-color: #404040;
+    border-radius:20px;
+    
+    color:white;
+    text-align:center;
+    text-transform: uppercase;
+    text-decoration:none;
+
+    font-family:'Arial Rounded MT Bold';
+    font-size:1.2rem;
+    
+  }
+
+  .filter-tag:hover:not(.active-tag){
+    text-decoration: underline;
+  }
+
+  .active-tag{
+    text-decoration: underline;
+  }
+
+  .rp-article_grid {
+     display: flex; 
+     gap: 30px; 
+    row-gap:45px;
+     flex-wrap: wrap; 
+     justify-content:center;
+  }
+
+  .rp-article-box{
+    width:360px;
+  height: 650px;
+    
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  
+
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+    background-image: url("{{ 'bones3.png' | asset_url }}");
+    background-size:500px;
+    background-position:95% 55%;
+    border-radius: 5px;
+  }
+
+  .rp-header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  
+    width:100%;
+    height:110px;
+  
+    padding-top:12px;
+  
+    gap:10px;
+  
+    border-bottom-left-radius: 100% 70%;
+    border-bottom-right-radius: 100% 70%;
+        border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 5px 5px 0px rgb(182 182 182 / 53%);
+  }
+
+  .rp-icon-box{
+    background-color:white;
+    border-radius:6px;
+    display:flex;
+    width:fit-content;
+    align-items:center;
+    padding:5px 3px;
+    margin:0px;
+  }
+  
+  .rp-icon-box span{
+    display:flex;
+  }
+  
+  .rp-icon-box svg{
+    width:30px;
+    height:auto;
+  }
+
+  .rp-cat-title{
+    margin:0px;
+    font-family:'Arial Rounded MT Bold';
+    font-size:2rem;
+    color:white;
+  }
+
+  .rp-title{
+    font-family:'Arial Rounded MT Bold';
+    font-size:3.5rem;
+    text-align:center;
+    margin:0px;
+    height:95px;
+  }
+
+  .rp-description{
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-size:1.3rem;
+    font-color:black;
+    
+    margin:0px;
+    text-align:center;
+line-height: 1.85em;
+    min-height: 7.4em;
+    
+  }
+
+  .rp-divider{
+    border-style:solid;
+    border-width:1px;
+    border-color:#d3d3d3;
+    width:310px;
+
+    margin-top:20px;
+    margin-bottom:20px;
+  }
+
+  .rp-content-box{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:30px;
+
+    gap:8px;
+  }
+
+  .rp-info-box{
+    display:flex;
+    flex-direction:column;
+    margin: 0px 30px;
+    gap: 20px;
+  }
+
+  .rp-det-cont{
+    display:flex;
+    gap:30px;
+  }
+
+  .rp-det-box{
+    flex:1;
+    text-align: center;
+  }
+
+  .rp-det-box-top{
+    display:flex;
+    align-items:center;
+
+        justify-content: center;
+gap: 8px;
+  }
+  
+  .rp-det-icon-wrap{
+    display:flex;
+  }
+  
+  .rp-det-icon{
+    width:20px;
+    height:auto;
+  }
+
+  .rp-det-val{
+    margin:0px;
+    font-family:'Montserrat';
+    font-weight:bold;
+        font-size: 1.55rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .rp-det-title{
+    margin:0px;
+    font-family:'Montserrat', sans-serif;
+    font-weight:bold;
+    line-height:10px;
+     text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .rp-yield-box{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    
+    border-radius:15px;
+    
+
+    margin:0px 10px;
+        padding: 12px 20px;
+  }
+
+  .rp-yield-img-wrap{
+    display:flex;
+    height: fit-content;
+
+    border-style:solid;
+    border-radius:7px;
+    border-width:3px;
+     background-color: white;
+    padding: 5px 5px;
+  }
+
+  .rp-yield-img{
+    width:20px;
+    height:auto;
+  }
+
+  .rp-yield-text{
+    margin:0px;
+
+    flex:1;
+    text-align:center;
+    color:#666666;
+        font-family: 'Montserrat-SemiBold';
+    line-height: 20px;
+    font-size: 1.4rem;
+  }
+  
+  .rp-button{
+
+    margin-top:auto;
+    margin-bottom:20px;
+    padding:4px 60px;
+        
+    color:white;
+    text-decoration:none;
+    font-family:'Montserrat', sans-serif;
+    font-size:2rem;
+    font-weight:bold;
+
+    border-radius:10px;
+    border-style:solid;
+    border-width:0px;
+    margin-bottom: 30px;
+    
+  }
+
+  .rp-button:hover {
+    border-width:1px;
+  }
+
+@media screen and (max-width: 768px) {
+h1.title--primary {
+    text-align: center;
+}
+
+
+.rp-article_grid {
+    padding: 1px 15px 1px 15px;
+    row-gap: 40px;
+}
+
+
+  
+
+{%- endstyle -%}
+
+
+
+  {%- paginate blog.articles by 9 -%}
+    <div id='main-blog-section' class="main-blog page-width section-{{ section.id }}-padding">
+      <h1 class="title--primary">{{ blog.title | escape }}</h1>
+
+      
+      <div class='tag-box'>
+    
+        {% assign base_url = blog.url | append: '/tagged/' %}
+        {% assign ct_size = current_tags | size %}
+
+          <a href='{{ blog.url }}' class='filter-tag {% if ct_size < 1 %}active-tag{% endif %}'>All</a>
+        
+        {% for tag in blog.all_tags %}
+          {% assign t_str = tag | handle %}
+          
+
+            {% assign tag_color = 'var(--' | append:t_str | append:'-tag)' %}
+        
+                {% assign gradient1 = 'var(--' | append:t_str | append:'-gradient1)' %}
+  {% assign gradient2 = 'var(--' | append:t_str | append:'-gradient2)' %}
+        
+            <a style='background:linear-gradient(217deg, rgb({{ gradient1 }}) 0%, rgb({{ gradient2 }}) 100%);border-color:{{ tag_color }}' href="{{ base_url | append: t_str }}" class='filter-tag 
+            {% if current_tags contains tag %}
+              active-tag
+            {% endif %}
+              '>{{ tag }}</a>
+          
+        {% endfor %}
+
+      </div>
+
+      
+      <div class="rp-article_grid">
+        {%- for article in blog.articles -%}
+          {%- render 'recipe-blog-card', article:article -%}
+
+  
+        {%- endfor -%}
+      </div>
+
+      
+      {%- if paginate.pages > 1 -%}
+        {%- render 'pagination', paginate: paginate -%}
+      {%- endif -%}
+    
+    </div>
+  {%- endpaginate -%}
+
+
+   <script>
+var cuantos =  document.getElementsByClassName("rp-title").length;
+     for (var i = 0; i < cuantos; i++) {
+var scrol1 = document.getElementsByClassName("rp-title")[i].scrollHeight;
+if(scrol1 > document.getElementsByClassName("rp-title")[i].offsetHeight){
+
+var tt = document.getElementsByClassName("rp-title")[i];
+  tt.style.height = scrol1+"px";
+document.getElementsByClassName("rp-article-box")[i].style.height = "700px";
+
+}
+     }
+   </script> 
+
+
+
+{% if blog.id == 84526334147 or blog.id == 84524040387 %}
+<style>
+.rp-article-box{
+background-image: url(https://cdn.shopify.com/s/files/1/0613/2288/7363/files/bones4.jpg?v=1675281381)!important;
+}
+
+</style>
+{% endif %}
+
+{% if blog.id == 84526661827 or blog.id == 84523974851 %}
+<style>
+.rp-article-box{
+background-image: url(https://cdn.shopify.com/s/files/1/0613/2288/7363/files/patitas.jpg?v=1675265717)!important;
+}
+
+</style>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1.label"
+        },
+        {
+          "value": "collage",
+          "label": "t:sections.main-blog.settings.layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        },
+        {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "default": false,
+      "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-blog.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}
